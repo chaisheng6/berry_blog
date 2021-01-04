@@ -1,0 +1,55 @@
+.m-padded-mini{
+    padding-bottom: 0.2em !important;
+    padding-top: 0.2em !important;
+}
+.m-padded-footer{
+    padding-bottom: 5em !important;
+    padding-top: 5em !important;
+}
+.m-padded-lr{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+.m-padded-big{
+    padding-left: 8em !important;
+    padding-right: 8em !important;
+}
+
+.m-margin-tb-tiny{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.m-margin-tb-large{
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+}
+
+.m-container{
+    max-width: 70em !important;
+    margin: auto !important;
+}
+
+.m-text-thin{
+    font-weight: 300 !important;
+}
+.m-text-space{
+    letter-spacing: 1px !important;
+}
+.m-text-lined{
+    line-height: 1.8 !important;
+}
+
+.m-inline-block{
+    display: inline-block !important;
+}
+
+.m-black{
+    color: #333333 !important;
+}
+.m-shadow{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4) !important;
+}
+
+.m-orange{
+    color: orange;!important;
+}

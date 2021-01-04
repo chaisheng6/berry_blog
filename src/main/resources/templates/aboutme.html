@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+
+    <title>关于我</title>
+</head>
+<body>
+<!--导航-->
+<nav th:replace="_fragments :: menu(5)" class="ui inverted segment m-padded-mini m-shadow">
+    <div class="ui container">
+        <div class="ui inverted secondary menu">
+            <h2 class="ui teal header item">Berry</h2>
+            <a href="#" class="item"><i class="home icon"></i>首页</a>
+            <a href="#" class="item"><i class="idea icon"></i>分类</a>
+            <a href="#" class="item"><i class="tags icon"></i>标签</a>
+            <a href="#" class="item"><i class="clone icon"></i>归档</a>
+            <a href="#" class="active item"><i class="info icon"></i>关于我</a>
+            <div class="right item">
+                <div class="ui icon input">
+                    <input type="text" placeholder="search..">
+                    <i class="search link icon"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</nav>
+<BR>
+<!--中间内容-->
+<div class="m-container">
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="eleven wide column">
+                <img src="https://unsplash.it/800/600?image=1004" alt="" class="ui rounded image">
+            </div>
+            <div class="five wide column">
+                <div class="ui top attached segment">
+                    <div class="ui header">关于我</div>
+                </div>
+                <div class="ui attached segment">
+                    <p>孙忠然，</p>
+                    <p>一个在二进制的世界里折腾的人.</p>
+                    <br>
+                    <br>
+                    <p>不想成为摄影师的程序员不是好厨子.</p>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui orange basic left pointing label">编程</div>
+                    <div class="ui orange basic left pointing label">摄影</div>
+                    <div class="ui orange basic left pointing label">做饭</div>
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">java</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">golang</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Vue.node</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">Nosql</div>
+                    <div class="ui teal basic left pointing label m-margin-tb-tiny">...</div>
+
+                </div>
+                <div class="ui bottom attached segment">
+                    <a href="#" class="ui github circular icon button" data-content="chaisheng6"><i class="github icon"></i></a>
+                    <a href="#" class="ui weixin circular icon button" data-content="13084124337"><i class="weixin icon"></i></a>
+                    <a href="#" class="ui weibo circular icon button" data-content="13084124337"><i class="weibo icon"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+<!--底部-->
+<footer class="ui inverted vertical segment" th:replace="_fragments :: footer">
+    <div class="ui container center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="three wide column">
+                <img src="../static/images/8724909af75b63f87aa37d31442e8ef.jpg"
+                     th:src="@{/images/8724909af75b63f87aa37d31442e8ef.jpg}"
+                     class="ui rounded image" alt=""
+                     style="width: 120px">
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                    <a href="#" class="item">用户故事</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我们</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email:chaisheng6@icould.com</a>
+                    <a href="#" class="item">WeChat:13084124337</a>
+                </div>
+
+            </div>
+
+            <div class="seven wide column">
+                <h4 class="ui inverted header">Berry</h4>
+                <div class="ui inverted link list">
+                    <p>这是我个人的博客，会分享喜欢的东西</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider "></div>
+        <p class="m-text-thin m-text-space m-text-lined">CopyRight @ 2019-2020 Berry Designed by Barry</p>
+    </div>
+
+
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+<script>
+    $('.weibo').popup();
+    $('.weixin').popup();
+    $('.github').popup();
+</script>
+</body>
+</html>

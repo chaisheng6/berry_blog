@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <title th:replace="${title}"></title>
+</head>
+<body>
+<nav th:fragment="menu(n)" class="ui inverted segment m-padded-mini m-shadow">
+    <div class="ui container">
+        <div class="ui inverted secondary menu">
+            <h2 class="ui teal header item">Berry</h2>
+            <a href="#" th:href="@{/}" class="item" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/types/-1}" class="item" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
+            <a href="#" th:href="@{/tags/-1}" class="item" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+            <a href="#" th:href="@{/archives}" class="item" th:classappend="${n==4} ? 'active'"><i class="clone icon"></i>归档</a>
+            <a href="#" th:href="@{/aboutme}" class="item" th:classappend="${n==5} ? 'active'"><i class="info icon"></i>关于我</a>
+            <div class="right item">
+                <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+                    <div class="ui icon input">
+                        <input type="text" name="query" placeholder="search.." th:value="${query}">
+                        <i class="search link icon" onclick="document.forms['search'].submit()"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-footer">
+    <div class="ui container center aligned container">
+        <div class="ui inverted divided grid">
+            <div class="three wide column">
+                <img src="../static/images/8724909af75b63f87aa37d31442e8ef.jpg"
+                     th:src="@{/images/8724909af75b63f87aa37d31442e8ef.jpg}"
+                     class="ui rounded image" alt=""
+                     style="width: 120px">
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">最新博客</h4>
+                <div id="newBlog-container">
+                    <div class="ui inverted link list" th:fragment="newBlogList">
+                        <a href="#" class="item" th:each="blog : ${newBlog}" th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">用户故事</a>
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">联系我们</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email:chaisheng6@icould.com</a>
+                    <a href="#" class="item">WeChat:13084124337</a>
+                </div>
+
+            </div>
+
+            <div class="seven wide column">
+                <h4 class="ui inverted header">Berry</h4>
+                <div class="ui inverted link list">
+                    <p>这是我个人的博客，会分享喜欢的东西</p>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider "></div>
+        <p class="m-text-thin m-text-space m-text-lined">CopyRight @ 2019-2020 Berry Designed by Barry</p>
+    </div>
+</footer>
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+    <script src="../../static/lib/editormd/editormd.min.js" th:src="@{/lib/editormd/editormd.min.js}"></script>
+    <script>
+        $('#newBlog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog")
+    </script>
+</th:block>
+
+
+</body>
+</html>
